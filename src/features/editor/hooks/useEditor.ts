@@ -1,3 +1,4 @@
+import { fabric } from "fabric";
 import { useCallback } from "react";
 
 export const useEditor = () => {
@@ -18,7 +19,7 @@ export const useEditor = () => {
         borderOpacityWhenMoving: 1,
         cornerStrokeColor: "#3b82f6",
       });
-    
+
       const initialWorkspace = new fabric.Rect({
         width: 900,
         height: 1200,
@@ -33,6 +34,9 @@ export const useEditor = () => {
       });
       initialCanvas.setWidth(initialContainer.offsetWidth);
       initialCanvas.setHeight(initialContainer.offsetHeight);
+      initialCanvas.add(initialWorkspace);
+      initialCanvas.centerObject(initialWorkspace);
+      initialCanvas.clipPath = initialWorkspace;
     },
     []
   );

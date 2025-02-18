@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useEditor } from "../hooks/use-editor";
+import { useEditor } from "../hooks/useEditor";
 import { fabric } from "fabric";
 const Editor = () => {
   const { init } = useEditor();
