@@ -9,6 +9,15 @@ export const useEditor = () => {
       initialCanvas: fabric.Canvas;
       initialContainer: HTMLDivElement;
     }) => {
+      fabric.Object.prototype.set({
+        cornerColor: "#fff",
+        cornerStyle: "circle",
+        borderColor: "#3b82f6",
+        borderScaleFactor: 1.1,
+        transparentCorners: false,
+        borderOpacityWhenMoving: 1,
+        cornerStrokeColor: "#3b82f6",
+      });
     
       const initialWorkspace = new fabric.Rect({
         width: 900,
